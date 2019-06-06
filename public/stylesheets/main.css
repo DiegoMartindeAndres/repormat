@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', 'Playfair Display', serif;
+  font-size: 4mm; }
+  body .page {
+    margin: 10px auto;
+    position: relative;
+    width: 21cm;
+    height: 29.7cm;
+    padding: 30mm 45mm 30mm 45mm;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    overflow: hidden; }
+    body .page .figure.align-block {
+      display: block;
+      text-align: center; }
+    body .page .figure.align-right {
+      display: inline-block;
+      float: right; }
+    body .page .figure.align-left {
+      display: inline-block;
+      float: left; }
+    body .page .figure img {
+      max-height: 8cm; }
+    body .page h1 {
+      font-size: 6mm; }
+    body .page h2 {
+      font-size: 5mm; }
+    body .page ul li {
+      list-style-type: none; }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -30mm;
+  margin-right: -45mm;
+  width: auto; }
+  .header .header-logo img {
+    max-height: 30mm; }
+  .header .header-text {
+    overflow: hidden; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 30mm;
+  width: 21cm;
+  display: flex;
+  align-items: center;
+  overflow: hidden; }
+
+@media (print) {
+  body .page {
+    margin: 0;
+    box-shadow: none; } }

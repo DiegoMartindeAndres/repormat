@@ -1,0 +1,32 @@
+body
+  margin: 0
+  padding: 0
+  font-family: 'PT Sans', 'Playfair Display', serif
+  font-size: 4mm
+  .page
+    margin: 10px auto
+    position: relative
+    width: $width-A4
+    height: $height-A4
+    padding: $margin-top-A4 $margin-left-A4 $margin-top-A4 $margin-left-A4
+    box-shadow: $page-shadow
+    overflow: hidden
+    .figure
+      &.align-block
+        display: block
+        text-align: center
+      &.align-right
+        display: inline-block
+        float: right
+      &.align-left
+        display: inline-block
+        float: left
+      img
+        max-height: 8cm
+    h1
+      font-size: 6mm
+    h2
+      font-size: 5mm
+    ul
+      li
+        list-style-type: none
