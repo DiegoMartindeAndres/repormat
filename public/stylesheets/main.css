@@ -5,11 +5,11 @@ body {
   font-size: 4mm; }
   body .page {
     margin: 10px auto;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
     position: relative;
     width: 21cm;
-    height: 29.7cm;
+    height: 36.43cm;
     padding: 30mm 45mm 30mm 45mm;
-    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
     overflow: hidden; }
     body .page .figure.align-block {
       display: block;
@@ -50,7 +50,26 @@ body {
   align-items: center;
   overflow: hidden; }
 
-@media (print) {
+@media print {
   body .page {
     margin: 0;
     box-shadow: none; } }
+
+.modal {
+  background-color: white;
+  position: fixed;
+  box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.3);
+  top: -10cm;
+  left: 50%;
+  transform: translateX(-50%); }
+  .modal.print {
+    padding: 10px 20px;
+    border-radius: 3em;
+    transition: top 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0; }
+    .modal.print.visible {
+      top: 10mm;
+      opacity: 1; }
+    .modal.print .modal-button {
+      color: #01acff;
+      text-decoration: none; }
