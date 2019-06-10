@@ -28,6 +28,9 @@ body {
       font-size: 5mm; }
     body .page ul li {
       list-style-type: none; }
+    body .page input[type=text] {
+      border: none;
+      border-bottom: 1px solid black; }
 
 .header {
   display: flex;
@@ -73,3 +76,40 @@ body {
     .modal.print .modal-button {
       color: #01acff;
       text-decoration: none; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/05/Formula-math-text-texture-wallpaper.jpg"); }
+  .container .lista-reportes {
+    background-color: white;
+    box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.3);
+    padding: 15;
+    padding-left: 20;
+    padding-right: 20;
+    min-height: 300px;
+    max-height: 80vh;
+    width: 20vw;
+    border-radius: 0.8em; }
+    .container .lista-reportes h2 {
+      text-align: center; }
+    .container .lista-reportes ul {
+      padding: 0;
+      list-style: none;
+      overflow-y: scroll; }
+      .container .lista-reportes ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
+        padding: 20px; }
+        .container .lista-reportes ul li:last-child {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+        .container .lista-reportes ul li .reporte-name {
+          overflow-x: hidden;
+          font-size: 1.3em; }
+        .container .lista-reportes ul li .actions a {
+          color: black;
+          margin: 0 10px; }

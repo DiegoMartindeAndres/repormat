@@ -1,0 +1,21 @@
+<% include head %>
+<body>
+  <div class="container">
+    <div class="lista-reportes">
+      <h2>Edita o visualiza los reportes disponibles</h2>
+      <ul>
+        <% plantillas.forEach(element => {%>
+          <li>
+            <span class="reporte-name">
+              <%= element %>
+            </span>
+            <span class="actions">
+              <a target="_blank" href="/edit/<%= element %>"><i class="far fa-edit"></i></a>
+              <a target="_blank" href="/<%= element %>"><i class="far fa-eye"></i></a>
+            </span>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</body>

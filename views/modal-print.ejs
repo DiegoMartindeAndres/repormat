@@ -1,3 +1,8 @@
 <div class="modal print">
-  <a href="/print" target="_blank" class="modal-button button">Generar PDF</a>
+  <a href="#" id="send-form" class="modal-button button">Generar PDF</a>
+  <script>
+    document.getElementById("send-form").onclick = function() {
+    document.getElementById("plantilla-form").submit();
+    }
+  </script>
 </div>
