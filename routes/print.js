@@ -29,8 +29,8 @@ router.get('/', function(req, res, next){
   });
 });
 
-router.get('/:PLANTILLA', function(req, res, next){
-  var params = req.query;
+router.post('/:PLANTILLA', function(req, res, next){
+  var params = req.body;
   params.plantilla = req.params.PLANTILLA;
   params.print = true;
   var query = querystring.stringify(params);
@@ -38,7 +38,7 @@ router.get('/:PLANTILLA', function(req, res, next){
     headless: true
   }).then(browser => {
     browser.newPage().then(async page => {
-      await page.goto('http://localhost:'+req.app.get('port')+'/' + params.plantilla + '?' + query, {waitUntil: 'networkidle0'}); //Navigate to template endpoint
+      await page.goto('http://localhost:'+req.app.get('port')+'/view/' + params.plantilla + '?' + query, {waitUntil: 'networkidle0'}); //Navigate to template endpoint
       await page.addStyleTag({
         content: "body .page {box-shadow: none;margin: 0; }"
       });

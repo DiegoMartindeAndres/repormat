@@ -1,8 +1,21 @@
 <div class="modal print">
-  <a href="#" id="send-form" class="modal-button button">Generar PDF</a>
+  <a href="#" id="send-form-print" class="modal-button button">Generar PDF <i class="far fa-file-pdf"></i></a>
+  <br>
+  <a href="#" id="send-form-view" class="modal-button button">Previsualizar <i class="far fa-eye"></i></a>
+  <br>
+  <a id="ocultar-modal" class="modal-button button" href="#">Ocultar <i class="fas fa-ghost"></i></a>
   <script>
-    document.getElementById("send-form").onclick = function() {
-    document.getElementById("plantilla-form").submit();
+    document.getElementById("send-form-print").onclick = function() {
+      document.getElementById("plantilla-form").submit();
+    }
+
+    document.getElementById("send-form-view").onclick = function() {
+      var form = document.getElementById("plantilla-form");
+      var actionView = form.getAttribute('action').replace('print','view');
+      form.setAttribute('action', actionView);
+      form.submit();
+      var printView = form.getAttribute('action').replace('view','print');
+      form.setAttribute('action', printView);
     }
   </script>
 </div>

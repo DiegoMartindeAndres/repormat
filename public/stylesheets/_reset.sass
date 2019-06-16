@@ -5,7 +5,8 @@ body
   font-size: 4mm
   .page
     //Descomentar para visualizar página en html
-    margin: 10px auto
+    position: relative
+    margin: 1cm auto
     //border-bottom: 1px solid red
     box-shadow: $page-shadow
     position: relative
@@ -24,7 +25,7 @@ body
         display: inline-block
         float: left
       img
-        max-height: 8cm
+        max-height: 13cm
     h1
       font-size: 6mm
     h2
@@ -34,4 +35,29 @@ body
         list-style-type: none
     input[type = text]
       border: none
-      border-bottom: 1px solid black
+      border: 1px solid blue
+      border-radius: 3px
+      width: 15mm
+    .var-defined
+      //border-bottom: 1px solid green
+      color: green
+      //font-size: 1.5em
+    sup
+      input[type = text]
+        width: 8mm
+    p
+      position: relative
+      .formula-number
+        position: absolute
+        right: -2cm
+        font-weight: bold
+    p.center
+      margin: 2cm auto
+      max-width: 15cm
+      text-align: center
+    p.border
+      border: 1px solid black
+      padding: 5mm
+    p.wide
+      max-width: none
+      width: 100%

@@ -16,15 +16,4 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/:PLANTILLA', function(req, res, next) {
-  var params = req.query;
-  var print = true;
-  var plantilla = req.params.PLANTILLA;
-  res.render('plantillas/' + plantilla, {
-    plantilla: plantilla,
-    print: print,
-    params: params
-  });
-});
-
 module.exports = router;

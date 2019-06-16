@@ -1,0 +1,1256 @@
+<% title = "Eurocodigo-5" %>
+<% headerlogo = "/images/logo-woodcalc.png" %>
+<% headerinfo = "Nombre de la empresa o datos del proyecto" %>
+<% sidetext = "Cálculo realizado mediante woodcalc.com. Versión 4.0 siguiendo la Norma UNE-EN 1995-1-1:2016" %>
+<% footertext = "Calculado mediante Woodcalc.com. Estos cálculos deben ser realizados por un técnico competente y con los conocimientos suficientes." %>
+<% include ../head %>
+<body>
+  <% if (!print){%>
+    <form id="plantilla-form" class="" action=/print/<%= plantilla %> method="post" target="_blank">
+  <% } %>
+  <div id="page1" class="page">
+    <% include ../page-header %>
+
+    <h1>Ecuaciones de Johansen madera y chapa de acero intermedia</h1>
+
+    <div class="figure align-right">
+      <img src="/images/figura2.png" alt="Figura 1">
+    </div>
+
+    <p>Proyecto: La casa de Esteban, C/ Alfonsito 19, 1º</p>
+    <p>Pieza: Viga sobre pilar V-01</p>
+
+    <h2>Material y geometría:</h2>
+    <p>Tipo de madera:
+      <% if (!print) {%>
+        <input type="text" name="varTipomadera" value="">
+      <%}else {%>
+        <%= params.varTipomadera %>
+      <%}%>
+    </p>
+
+    <p>Resitencia:
+      <% if (!print) {%>
+        <input type="text" name="varResistencia" value="">
+      <%}else {%>
+        <%= params.varResistencia %>
+      <%}%>
+    </p>
+
+    <p>Ancho b:
+      <% if (!print) {%>
+        <input type="text" name="varb" value="">
+      <%}else {%>
+        <%= params.varb %>
+      <%}%>
+    </p>
+
+    <p>Altura h:
+      <% if (!print) {%>
+        <input type="text" name="varh" value="">
+      <%}else {%>
+        <%= params.varh %>
+      <%}%>
+    </p>
+
+    <p>Grosor lateral madera t<sub>1</sub>:
+      <% if (!print) {%>
+        <input type="text" name="vart1" value="">
+      <%}else {%>
+        <%= params.vart1 %>
+      <%}%>
+    </p>
+
+    <p>Grado de acero (chapa):
+      <% if (!print) {%>
+        <input type="text" name="varGradoAceroChapa" value="">
+      <%}else {%>
+        <%= params.varGradoAceroChapa %>
+      <%}%>
+    </p>
+
+    <p>Espesor de chapa de acero t<sub>s</sub>:
+      <% if (!print) {%>
+        <input type="text" name="varts" value="">
+      <%}else {%>
+        <%= params.varts %>
+      <%}%>
+    </p>
+
+    <p>Grado de acero (SDU ¿Pasador?):
+      <% if (!print) {%>
+        <input type="text" name="varGradoAceroPasador" value="">
+      <%}else {%>
+        <%= params.varGradoAceroPasador %>
+      <%}%>
+    </p>
+
+    <p>Diámetro d:
+      <% if (!print) {%>
+        <input type="text" name="vard" value="">
+      <%}else {%>
+        <%= params.vard %>
+      <%}%>
+    </p>
+
+    <p>Filas paralelas a la fibra n:
+      <% if (!print) {%>
+        <input type="text" name="varn" value="">
+      <%}else {%>
+        <%= params.varn %>
+      <%}%>
+    </p>
+
+    <p>Filas perpendiculares a la fibra m:
+      <% if (!print) {%>
+        <input type="text" name="varm" value="">
+      <%}else {%>
+        <%= params.varm %>
+      <%}%>
+    </p>
+
+    <h2>Separación entre pasadores</h2>
+    <h2>Separacion entre taladros</h2>
+
+    <p>a<sub>1</sub>:
+      <% if (!print) {%>
+        <input type="text" name="vara1" value="">
+      <%}else {%>
+        <%= params.vara1 %>
+      <%}%>
+    </p>
+
+    <p>a<sub>2</sub>:
+      <% if (!print) {%>
+        <input type="text" name="vara2" value="">
+      <%}else {%>
+        <%= params.vara2 %>
+      <%}%>
+    </p>
+
+    <p>a<sub>3,t</sub>:
+      <% if (!print) {%>
+        <input type="text" name="vara3t" value="">
+      <%}else {%>
+        <%= params.vara3t %>
+      <%}%>
+    </p>
+
+    <p>a<sub>4,c</sub>:
+      <% if (!print) {%>
+        <input type="text" name="var4c" value="">
+      <%}else {%>
+        <%= params.var4c %>
+      <%}%>
+    </p>
+
+    <p>e<sub>1</sub>:
+      <% if (!print) {%>
+        <input type="text" name="vare1" value="">
+      <%}else {%>
+        <%= params.vare1 %>
+      <%}%>
+    </p>
+
+    <p>e<sub>2</sub>:
+      <% if (!print) {%>
+        <input type="text" name="vare2" value="">
+      <%}else {%>
+        <%= params.vare2 %>
+      <%}%>
+    </p>
+
+    <h2>Solicitación</h2>
+
+    <p>Estrés F<sub>t,D</sub>:
+      <% if (!print) {%>
+        <input type="text" name="varFtD" value="">
+      <%}else {%>
+        <%= params.varFtD %>
+      <%}%>
+    </p>
+
+    <p>Clase de servicio:
+      <% if (!print) {%>
+        <input type="text" name="varClaseServicio" value="">
+      <%}else {%>
+        <%= params.varClaseServicio %>
+      <%}%>
+    </p>
+
+    <p>Duración de la carga:
+      <% if (!print) {%>
+        <input type="text" name="varDuracionCarga" value="">
+      <%}else {%>
+        <%= params.varDuracionCarga %>
+      <%}%>
+    </p>
+
+    <p>Kmod:
+      <% if (!print) {%>
+        <input type="text" name="varKmod" value="">
+      <%}else {%>
+        <%= params.varKmod %>
+      <%}%>
+    </p>
+
+    <p class="center border">Índice de agotamiento:
+      <% if (!print) {%>
+        <input type="text" name="varIndiceAgotamiento" value="">
+      <%}else {%>
+        <%= params.varIndiceAgotamiento %>
+      <%}%>
+      <= 1.00 Evidencia cumplida
+    </p>
+
+    <% include ../page-side %>
+    <% include ../page-footer %>
+  </div>
+
+
+  <div id="page2" class="page">
+    <% include ../page-header %>
+
+    <h2>Cálculos</h2>
+    <h2>Verificación de la carga; Sección transversal neta.</h2>
+    <p>Ancho del corte t<sub>s, L</sub>:
+      <% if (!print) {%>
+        <input type="text" name="vartsL" value="">
+      <%}else {%>
+        <%= params.vartsL %>
+      <%}%>
+    </p>
+
+    <p>Consideración del ancho de la ranura en la pieza de madera K<sub>t, e</sub>:
+      <% if (!print) {%>
+        <input type="text" name="varKte" value="">
+      <%}else {%>
+        <%= params.varKte %>
+      <%}%>
+       reducción de la resistencia a la tracción según NA NCI. 8.1.6
+    </p>
+    <p>
+      \(
+        A_{1, netto} = (t_{1} - t_{s, L})*(h-m*d)*10^{-2} =
+        <% if (!print) {%>
+          \)
+          (<span class="var-defined">t1</span> - <span class="var-defined">tsL</span>)*(<span class="var-defined">h</span>-<span class="var-defined">m</span>*<span class="var-defined">d</span>)*10<sup>-2</sup>=<input type="text" name="varA1netto" value="">cm<sup>2</sup>
+        <%}else {%>
+          (<%= params.vart1 %> - <%= params.vartsL %>)*(<%= params.varh %>-<%= params.varm %>*<%= params.vard %>)*10^{-2}=<%= params.varA1netto %>cm^{2}
+          \)
+        <%}%>
+    </p>
+    <p>
+      \(
+        f_{t, 0, d} = k_{mod}*\frac{f_{t, 0, k}}{\gamma M} =
+        <% if (!print) {%>
+          \)
+          <span class="var-defined">Kmod</span>*(<input type="text" name="varOtro13" value="">/<input type="text" name="varOtro14" value="">)<input type="text" name="varOtro15" value=""><sup><input type="text" name="varOtro16" value=""></sup>=<input type="text" name="varft0d" value="">kN/cm<sup>2</sup>
+        <%}else {%>
+          <%= params.varKmod %>*\frac{<%= params.varOtro13 %>}{<%= params.varOtro14 %>}*<%= params.varOtro15 %>^{<%= params.varOtro16 %>}=<%= params.varft0d %>kN/cm^{2}
+          \)
+        <%}%>
+    </p>
+    <p>
+      \(
+        \sigma_{t, 0, d} = \frac{\frac{1}{s}*F_{t, d}}{A_{1, netto}} =
+        <% if (!print) {%>
+          \)
+          ((1/<span class="var-defined">s</span>)*<span class="var-defined">Ft,d</span>)/<span class="var-defined">A1netto</span>=<input type="text" name="varsigmat0d" value="">kN/cm<sup>2</sup>
+        <%}else {%>
+          \frac{\frac{1}{<%= params.vars %>}*<%= params.varFtD %>}{<%= params.varA1netto %>} = <%= params.varsigmat0d %>kN/cm^{2}
+          \)
+        <%}%>
+    </p>
+
+    <p>
+      \(
+        k_{h} =
+        <% if (!print) {%>
+          \)<br>min{ <br>
+            (150/<span class="var-defined">b</span>)<sup>0.2</sup> = <input type="text" name="varOtro17" value="">;<br>
+            1.3<br>
+          }
+          =<input type="text" name="varkh" value="">
+        <%}else {%>
+          min
+          \begin{cases}
+            (\frac{150}{<%= params.varb %>})^{0.2} = <%= params.varOtro17 %>\\
+            1.3
+          \end{cases}
+          =
+          <%= params.varkh %>
+          \)
+        <%}%>
+        <span class="formula-number">
+          (3.1)
+        </span>
+    </p>
+
+    <p class="center border wide">
+      Capacidad de carga lateral de madera:
+      <% if (!print) {%>
+        \(
+          \frac{\sigma_{t, 0, d}}{k_{t, c}*k_{h}*f_{t, 0, d}} =
+        \)
+        (<span class="var-defined">sigma70d</span>/(<input type="text" name="varOtro18" value="">*<span class="var-defined">kh</span>*<span class="var-defined">ft0d</span>)) = <input type="text" name="res1" value="">
+      <%}else {%>
+        \(
+          \frac{\sigma_{t, 0, d}}{k_{t, c}*k_{h}f_{t, 0, d}} = \frac{<%= params.varsigmat0d %>}{<%= params.varOtro18 %>*<%= params.varkh %>*<%= params.varft0d %>} = <%= params.res1 %>
+        \)
+      <%}%>
+    </p>
+
+    <h2>Capacidad de carga de chapa de acero - tensión en seccion neta</h2>
+
+    <p>Tensión de límite elástico f<sub>y</sub>(S 235):
+      <% if (!print) {%>
+        <input type="text" name="varfy" value=""> N/mm<sup>2</sup>
+      <%}else {%>
+        \(
+          <%= params.varfy %> N/mm^{2}
+        \)
+      <%}%>
+    </p>
+
+    <p>Tensión de rotura f<sub>u</sub>(S 235):
+      <% if (!print) {%>
+        <input type="text" name="varfu" value=""> N/mm<sup>2</sup>
+      <%}else {%>
+        \(
+          <%= params.varfu %> N/mm^{2}
+        \)
+      <%}%>
+    </p>
+    <p>n<sub>s</sub>(S 235):
+      <% if (!print) {%>
+        <input type="text" name="varns" value=""> Número de hojas de acero
+      <%}else {%>
+        \(
+          <%= params.varns %>
+        \)Número de hojas de acero
+      <%}%>
+    </p>
+
+    <p>\( \gamma_{M0}:
+      <% if (!print) {%>
+        \)
+        <input type="text" name="vargammaM0" value="">
+      <%}else {%>
+          <%= params.vargammaM0 %>
+        \)
+      <%}%>
+    </p>
+
+    <p>\( \gamma_{M2}:
+      <% if (!print) {%>
+        \)
+        <input type="text" name="vargammaM2" value="">
+      <%}else {%>
+          <%= params.vargammaM2 %>
+        \)
+      <%}%>
+    </p>
+
+    <p>\( d_{M0}:
+      <% if (!print) {%>
+        \)
+        <input type="text" name="vardM0" value="">mm Diámetro del agujero (DIN EN 1995-1-1 / NA, NCI Re 8.6)
+      <%}else {%>
+          <%= params.vardM0 %>
+        \)
+        Diámetro del agujero (DIN EN 1995-1-1 / NA, NCI Re 8.6)
+      <%}%>
+    </p>
+
+    <p>
+      <% if (!print) {%>
+        \(
+          A = n_{s}*t_{s}*(2*e_{2} + (m - 1)*a_{2}) =
+        \)
+        <span class="var-defined">ns</span>*<span class="var-defined">ts</span>*(2*<span class="var-defined">e2</span> + (<span class="var-defined">m</span> - 1)*<span class="var-defined">a2</span>)=<input type="text" name="varA" value="">mm<sup>2</sup>
+      <%}else {%>
+        \(
+        A = n_{s}*t_{s}*(2*e_{2} + (m - 1)*a_{2}) = <%= params.varns %>*<%= params.varts %>*(2*<%= params.vare2 %> + (<%= params.varm %> - 1)*<%= params.vara2 %>) = <%= params.varA %>mm^{2}
+        \)
+      <%}%>
+    </p>
+
+    <p>
+      <% if (!print) {%>
+        \(
+          A_{net} = n_{s}*t_{s}*(2*e_{2} + (m - 1)*a_{2} - m*d_{0}) =
+        \)
+        <span class="var-defined">ns</span>*<span class="var-defined">ts</span>*(2*<span class="var-defined">e2</span> + (<span class="var-defined">m</span> - 1)*<span class="var-defined">a2</span> - <span class="var-defined">m</span>*<span class="var-defined">d0</span>)=<input type="text" name="varAnet" value="">mm<sup>2</sup>
+      <%}else {%>
+        \(
+        A_{net} = n_{s}*t_{s}*(2*e_{2} + (m - 1)*a_{2}) = <%= params.varns %>*<%= params.varts %>*(2*<%= params.vare2 %> + (<%= params.varm %> - 1)*<%= params.vara2 %> - <%= params.varm %>*<%= params.vard0 %>) = <%= params.varAnet %>mm^{2}
+        \)
+      <%}%>
+    </p>
+
+    <p>
+      <% if (!print) {%>
+        \(
+          N_{pl, Rd} = \frac{A*f_{y}}{\gamma_{M0}}*10^{-3} =
+        \)
+        (<span class="var-defined">A</span>*<span class="var-defined">fy</span>/<span class="var-defined">gammaM0</span>)*10<sup>-3</sup> = <input type="text" name="varNplRd" value="">kN
+      <%}else {%>
+        \(
+          N_{pl, Rd} = \frac{A*f_{y}}{\gamma_{M0}}*10^{-3} = \frac{<%= params.varA %>*<%= params.varfy %>}{<%= params.vargammaM0 %>}*10^{-3} = <%= params.varNplRd %>kN
+        \)
+      <%}%>
+      <span class="formula-number">
+        (6.6)
+      </span>
+    </p>
+
+    <p>
+      <% if (!print) {%>
+        \(
+          N_{u, Rd} = \frac{0.9*A_{net}*f_{u}}{\gamma M2}*10^{-3} =
+        \)
+        (0.9*<span class="var-defined">Anet</span>*<span class="var-defined">fu</span>/<span class="var-defined">gammaM2</span>)*10<sup>-3</sup> = <input type="text" name="varNuRd" value="">kN
+      <%}else {%>
+        \(
+          N_{u, Rd} = \frac{0.9*A_{net}*f_{u}}{\gamma M2}*10^{-3} = \frac{0.9<%= params.varAnet %>*<%= params.varfu %>}{<%= params.vargammaM2 %>}*10^{-3} = <%= params.varNuRd %>kN
+        \)
+      <%}%>
+      <span class="formula-number">
+        (6.7)
+      </span>
+    </p>
+
+    <p class="center border wide">
+      Capacidad de carga de chapa de acero:
+      <% if (!print) {%>
+        \(
+          \frac{F_{t, d}}{N_{R, d}} =
+        \)
+        <span class="var-defined">Ft,d</span>/<input type="text" name="varNRd" value=""> = <input type="text" name="res2" value="">
+      <%}else {%>
+        \(
+          \frac{F_{t, d}}{N_{R, d}} = \frac{<%= params.varFtD %>}{<%= params.varNRd %>} = <%= params.res2 %>
+        \)
+      <%}%>
+    </p>
+
+    <% include ../page-side %>
+    <% include ../page-footer %>
+
+  </div>
+  <div id="page3" class="page">
+    <% include ../page-header %>
+
+      <h2>Verificación de los medios de conexión - capacidad de carga del cordón en la chapa de acero</h2>
+
+      <p>n<sub>s</sub>
+        <% if (!print) {%>
+          <span class="var-defined">ns</span>
+        <%}else {%>
+            <%= params.varns %>
+        <%}%>
+        Número de hojas de acero
+      </p>
+      <p>p<sub>2</sub>
+        <% if (!print) {%>
+          <span class="var-defined">a2</span>
+        <%}else {%>
+            <%= params.vara2%>
+        <%}%>
+        Corresponde a la distancia de conexión a<sub>2</sub>
+      </p>
+      <p>d<sub>0</sub>
+        <% if (!print) {%>
+          <input type="text" name="vard0" value="">
+        <%}else {%>
+            <%= params.vard0 %>
+        <%}%>
+        Diámetro del agujero (DIN EN 1995-1-1 / NA, NCI Re 8.6)
+      </p>
+      <p>a<sub>v</sub>
+        <% if (!print) {%>
+          <input type="text" name="varav" value="">
+        <%}else {%>
+            <%= params.varav %>
+        <%}%>
+        Según DIN EN 1993-1-8: 2010-12, párrafo 3.6, Tabla 3.4
+      </p>
+
+      <p>
+        \(
+          k_{1} =
+          <% if (!print) {%>
+            \)
+            min{<br>
+            2.8*(e<sub>2</sub>/d<sub>0</sub>)-1.7=2.8*(<span class="var-defined">e2</span>/<span class="var-defined">d0</span>)-1.7=<input type="text" name="varOtro19" value="">; <br>
+            2.8*(p<sub>2</sub>/d<sub>0</sub>)-1.7=2.8*(<span class="var-defined">p2</span>/<span class="var-defined">d0</span>)-1.7=<input type="text" name="varOtro20" value="">; <br>
+            2.5 <br>
+            }=<input type="text" name="vark1" value="">
+          <%}else {%>
+            min
+            \begin{cases}
+              2.8*\frac{e_{2}}{d_{0}}-1.7=2.8*\frac{<%= params.vare2 %>}{<%= params.vard0 %>}-1.7=<%= params.varOtro19 %>\\
+              2.8*\frac{p_{2}}{d_{0}}-1.7=2.8*\frac{<%= params.vara2 %>}{<%= params.vard0 %>}-1.7=<%= params.varOtro20 %>\\
+              2.5
+            \end{cases}
+            =<%= params.vark1 %>
+            \)
+          <%}%>
+          <span class="formula-number">
+            (DIN EN 1993-1-8:2010-12, Tab. 3.4)
+          </span>
+      </p>
+
+      <p>Resistencia a la tracción (SD\(_{\mu}\)) f<sub>ub</sub>:
+        <% if (!print) {%>
+          <input type="text" name="varfub" value="">
+        <%}else {%>
+            <%= params.varfub %>
+        <%}%>
+        N/mm<sup>2</sup>
+      </p>
+      <p>Resistencia a la tracción (chapa) f<sub>u</sub>:
+        <% if (!print) {%>
+          <span class="var-defined">fu</span>
+        <%}else {%>
+            <%= params.varfu %>
+        <%}%>
+        N/mm<sup>2</sup>
+      </p>
+      <p>\( \gamma_{M2} \):
+        <% if (!print) {%>
+          <span class="var-defined">gammaM2</span>
+        <%}else {%>
+            <%= params.vargammaM2 %>
+        <%}%>
+        según la norma DIN EN 1993-1-8: 2010-12, párrafo 2.2, tabla 2.1
+      </p>
+
+      <p class="">
+        <% if (!print) {%>
+          \(
+            \alpha_{d} = \frac{e_{1}}{3*d_{0}} =
+          \)
+          (<span class="var-defined">e1</span>/(3*<span class="var-defined">d0</span>))=<input type="text" name="varalphad" value="">
+        <%}else {%>
+          \(
+            \alpha_{d} = \frac{e_{1}}{3*d_{0}} = \frac{<%= params.vare1 %>}{3*<%= params.vard0 %>}=<%= params.varalphad %>
+          \)
+        <%}%>
+      </p>
+      <p>
+        \(
+          \alpha_{b} =
+          <% if (!print) {%>
+            \)
+            min{<br>
+              \( \alpha_{d}\) = <span class="var-defined">alphad</span>; <br>
+              \( \frac{f_{ub}}{f_{u}}\) = (<span class="var-defined">fub</span>/<span class="var-defined">fu</span>)=<input type="text" name="varOtro21" value="">; <br>
+              1.0 <br>
+            } = <input type="text" name="varalphab" value="">
+          <%}else {%>
+            min
+            \begin{cases}
+              \alpha_{d} = <%= params.varalphad %>\\
+              \frac{f_{ub}}{f_{u}} = \frac{<%= params.varfub %>}{<%= params.varfu %>}=<%= params.varOtro21 %>\\
+              1.0
+            \end{cases}
+            = <%= params.varalphab %>
+            \)
+          <%}%>
+          <span class="formula-number">
+            (DIN EN 1993-1-8:2010-12, Tab. 3.4)
+          </span>
+      </p>
+
+      <h2>Tensión de cálculo (Lochleibung)</h2>
+      <p class="">
+        <% if (!print) {%>
+          \(
+            F_{b, Rd} = \frac{k_{1}*\alpha_{b}*f_{u}*d*t_s}{\gamma_{M2}}*10^{-3} =
+          \)
+          (<span class="var-defined">k1</span>*<span class="var-defined">alphab</span>*<span class="var-defined">fu</span>*<span class="var-defined">d</span>*<span class="var-defined">ts</span>/<span class="var-defined">gammaM2</span>)*10<sup>-3</sup>=<input type="text" name="varFbrD" value="">kN
+        <%} else {%>
+          \(
+            F_{b, Rd} = \frac{k_{1}*\alpha_{b}*f_{u}*d*t}{\gamma_{M,2}}*10^{-3} = \frac{<%= params.vark1 %>*<%= params.varalphab %>*<%= params.varfu %>*<%= params.vard %>*<%= params.varts %>}{<%= params.vargammaM2 %>}*10^{-3} = <%= params.varFbrD %>kN
+          \)
+        <%}%>
+      </p>
+
+      <h2>Cortante(Abscheren)</h2>
+      <p class="">
+        <% if (!print) {%>
+          \(
+            A = \frac{\pi}{4}*d^{2} = \frac{3.15}{4}*
+          \)
+          <span class="var-defined">d</span><sup>2</sup> = <input type="text" name="varArepetida" value="">mm<sup>2</sup>
+        <%} else {%>
+          \(
+            A = \frac{\pi}{4}*d^{2} = \frac{3.15}{4}*<%= params.vard %>^{2} = <%= params.varArepetida %>mm^{2}
+          \)
+        <%}%>
+      </p>
+      <p class="">
+        <% if (!print) {%>
+          \(
+            F_{v, Rd} = \frac{a_{v}*f_{ub}*A}{\gamma_{M2}}*10^{-3} =
+          \)
+          (<span class="var-defined">av</span>*<span class="var-defined">fub</span>*<span class="var-defined">A</span>/<span class="var-defined">gammaM2</span>)*10<sup>-3</sup> = <input type="text" name="varFvRd" value=""> kN
+        <%} else {%>
+          \(
+            F_{v, Rd} = \frac{a_{v}*f_{ub}*A}{\gamma_{M, 2}}*10^{-3} = \frac{<%= params.varav %>*<%= params.varfub %>*<%= params.varArepetida %>}{<%= params.vargammaM2 %>}*10^{-3} = <%= params.varFvRd %>kN
+          \)
+        <%}%>
+      </p>
+
+      <h2>Solicitación de carga (Beanspruchung)</h2>
+      <p class="">
+        <% if (!print) {%>
+          \(
+            F_{v, Ed} = \frac{F_{t, d}}{n_{ef}*m*n_{s}} =
+          \)
+           (<span class="var-defined">Ft,d</span>/(<span class="var-defined">nef</span>*<span class="var-defined">m</span>*<span class="var-defined">ns</span>))=<input type="text" name="varFvEd" value="">kN
+        <%} else {%>
+          \(
+            F_{v, Ed} = \frac{F_{t, d}}{n_{ef}*m*n_{s}} = \frac{<%= params.varFtD %>}{<%= params.varnef %>*<%= params.varm %>*<%= params.varns %>} = <%= params.varFvEd %>kN
+          \)
+        <%}%>
+      </p>
+
+      <h2>Resistencia al estrés (Beanspruchbarkeit)</h2>
+      <p>
+        \(
+          F_{Rd} =
+          <% if (!print) {%>
+            \)
+            min{<br>
+              \( F_{b, Rd}\) = <span class="var-defined">FbrD</span>kN; <br>
+              \( 2*F_{v, Rd}\) = 2*<span class="var-defined">FvRd</span>=<input type="text" name="varOtro22" value="">kN; <br>
+            } = <input type="text" name="varFRd" value="">
+          <%}else {%>
+            min
+            \begin{cases}
+               F_{b, Rd} = <%= params.varFbrD %>kN\\
+               2*F_{v, Rd} = 2*<%= params.varFvRd %>=<%= params.varOtro22 %>kN\\
+            \end{cases}
+              =<%= params.varFRd %>
+            \)
+          <%}%>
+      </p>
+      <p class="center border wide">
+        Capacidad de carga de la lámina en la unión:
+        <% if (!print) {%>
+          \(
+            \frac{F_{v, Ed}}{F_{Rd}} =
+          \)
+          <span class="var-defined">FvEd</span>/<span class="var-defined">FRd</span> = <input type="text" name="res3" value="">
+        <%}else {%>
+          \(
+            \frac{F_{v, Ed}}{F_{Rd}} = \frac{<%= params.varFvEd %>}{<%= params.varFRd %>} = <%= params.res3 %>
+          \)
+        <%}%>
+      </p>
+
+    <% include ../page-side %>
+    <% include ../page-footer %>
+  </div>
+
+  <div id="page4" class="page">
+    <% include ../page-header %>
+
+    <h2>Fallo en bloque en chapa de acero:</h2>
+    <p>ns:
+      <% if (!print) {%>
+        <span class="var-defined">ns</span> Número de hojas de acero
+      <%}else {%>
+        \(
+          <%= params.varns %>
+        \)Número de hojas de acero
+      <%}%>
+    </p>
+    <p>Grado de acero (chapa):
+      <% if (!print) {%>
+        <span class="var-defined">GradoAcero</span>
+      <%}else {%>
+        \(
+          <%= params.varGradoAceroChapa %>
+        \)
+      <%}%>
+    </p>
+
+    <p class="">
+      <% if (!print) {%>
+        \(
+          A_{nt}=(m-1)*(a_{2}-d_{0})*t_{s}=
+        \)
+        (<span class="var-defined">m</span>-1)*(<span class="var-defined">a2</span>-<span class="var-defined">d0</span>)*<span class="var-defined">ts</span>=<input type="text" name="varAnt" value="">mm<sup>2</sup>
+      <%}else {%>
+        \(
+          A_{nt}=(m-1)*(a_{2}-d{0})*t_{s}=(<%= params.varm %>-1)*(<%= params.vara2 %>-<%= params.vard0 %>)*<%= params.varts %>=<%= params.varAnt %>mm^{2}
+        \)
+      <%}%>
+    </p>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          A_{nv}=((n-1)*(a_{1}-d_{0})+(e_{1}-\frac{d_{0}}{2}))*t_{s}*2=
+        \)
+        ((<span class="var-defined">n</span>-1)*(<span class="var-defined">a1</span>-<span class="var-defined">d0</span>)+(<span class="var-defined">e1</span>-(<span class="var-defined">d0</span>/2)))*<span class="var-defined">ts</span>*2=<input type="text" name="varAnv" value="">mm<sup>2</sup>
+      <%}else {%>
+        \(
+          A_{nv}=((n-1)*(a_{1}-d_{0})+(e_{1}-\frac{d_{0}}{2}))*t_{s}*2 = ((<%= params.varn %>-1)*(<%= params.vara1 %>-<%= params.vard0 %>)+(<%= params.vare1 %>-\frac{<%= params.vard0 %>}{2}))*<%= params.varts %>*2= <%= params.varAnv %>mm^{2}
+        \)
+      <%}%>
+    </p>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          V_{eff, 1, Rd} = (f_{u}*\frac{A_{nt}}{\gamma_{M2}}+\frac{f_{y}}{\sqrt{3}}*\frac{A_{nv}}{\gamma_{M0}})*10^{-3} =
+        \)
+        (<span class="var-defined">fu</span>*(<span class="var-defined">Ant</span>/<span class="var-defined">gammaM2</span>)+(<span class="var-defined">fy</span>/sqrt(3))*(<span class="var-defined">Anv</span>/<span class="var-defined">gammaM0</span>))*10<sup>-3</sup> = <input type="text" name="varVeff1Rd" value="">kN
+      <%}else {%>
+        \(
+          V_{eff, 1, Rd} = (f_{u}*\frac{A_{nt}}{\gamma_{M2}}+\frac{f_{y}}{\sqrt{3}}*\frac{A_{nv}}{\gamma_{M0}})*10^{-3} = (<%= params.varfu %>*\frac{<%= params.varAnt %>}{<%= params.vargammaM2 %>}+\frac{<%= params.varfy %>}{\sqrt{3}}*\frac{<%= params.varAnv %>}{<%= params.vargammaM0 %>})*10^{-3} = <%= params.varVeff1Rd %>kN
+        \)
+      <%}%>
+      <span class="formula-number">
+        (DIN EN 1993-1-8:2010-12, GI. 3.9)
+      </span>
+    </p>
+
+    <h2>Estrés:</h2>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          F_{t,d} =
+        \)
+        <span class="var-defined">Ft,d</span> kN
+      <%}else {%>
+        \(
+          F_{t,d} = <%= params.varFtD %>kN
+        \)
+      <%}%>
+    </p>
+    <p class="border">
+      Estrés de fallo en bloque en la chapa:
+      <% if (!print) {%>
+        \(
+          \frac{F_{t,d}}{n_{s}+V_{eff, 1, Rd}} =
+        \)
+         (<span class="var-defined">Ft,d</span>/(<span class="var-defined">ns</span>+<span class="var-defined">Veff1Rd</span>))=<input type="text" name="res4" value="">
+      <%}else {%>
+        \(
+          \frac{F_{t,d}}{n_{s}+V_{eff, 1, Rd}} = \frac{<%= params.varFtD %>}{<%= params.varns %>+<%= params.varVeff1Rd %>} = <%= params.res4 %>
+        \)
+      <%}%>
+    </p>
+
+    <h2>Capacidad de carga de los pasadores en el componente de madera (método de diseño exacto)</h2>
+    <p class="">
+      Densidad (Clase resistente C24) \( \rho_k \):
+      <% if (!print) {%>
+        <input type="text" name="varrhok" value="">
+      <%}else {%>
+        \(
+          <%= params.varrhok %>
+        \)
+      <%}%>
+      kg/m<sup>3</sup>
+    </p>
+
+    <p class="">
+      Resistencia a la tracción (SDü) \( f_{u, k} \):
+      <% if (!print) {%>
+        <input type="text" name="varfuk" value="">
+      <%}else {%>
+        \(
+          <%= params.varfuk %>
+        \)
+      <%}%>
+      N/mm<sup>2</sup>
+    </p>
+
+    <p class="">
+      <% if (!print) {%>
+        \(
+          f_{h, 0, k} = 0.082*(1-0.01*d)*\rho_k =
+        \)
+         0.082*(1-0.01*<span class="var-defined">d</span>)*<span class="var-defined">rhok</span>=<input type="text" name="varfh0k" value=""> N/mm<sup>2</sup>
+      <%}else {%>
+        \(
+          f_{h, 0, k} = 0.082*(1-0.01*d)*\rho_k = 0.082*(1-0.01*<%= params.vard %>)*<%= params.rhok %> = <%= params.varfh0k %> N/mm^2
+        \)
+      <%}%>
+      <span class="formula-number">
+        (8.32)
+      </span>
+    </p>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          M_{y, Rk} = 0.3*f_{u, k}*d^{2.6} =
+        \)
+         0.3*<span class="var-defined">fuk</span>*<span class="var-defined">d</span><sup>2.6</sup> = <input type="text" name="varMyRk" value="">Nmm
+      <%}else {%>
+        \(
+          M_{y, Rk} = 0.3*f_{u, k}*d^{2.6} = 0.3*<%= params.varfuk %>*<%= params.vard %>^{2.6} = <%= params.varMyRk %>Nmm
+        \)
+      <%}%>
+      <span class="formula-number">
+        (8.30)
+      </span>
+    </p>
+
+    <p>Resistencia a cortante I y II: </p>
+
+    <p class="">
+      <% if (!print) {%>
+        \(
+          f_{h, 1, k} = f_{h, 0, k} =
+        \)
+         <input type="text" name="varfh1k" value=""> N/mm<sup>2</sup>
+      <%}else {%>
+        \(
+          f_{h, 1, k} = f_{h, 0, k} = <%= params.varfh1k %>N/mm^2
+        \)
+      <%}%>
+    </p>
+
+    <p class="">
+      \(
+        F_{v, Rk, I} = min
+        \begin{cases}
+          (f) f_{h, 1, k}*t_1*d\\
+          (g) f_{h, 1, k}*t_1*d*[\sqrt{2+\frac{4*M_{y, Rk}}{f_{h, 1, k}*d*t_{1}^{2}}}-1] + \frac{F_{ax, Rk}}{4}\\
+          (h) 2.3*\sqrt{M_{y, Rk}*f_{h, 1, k}*d} + \frac{F_{ax, Rk}}{4}
+        \end{cases}
+        =
+      \)
+      <% if (!print) {%>
+        <br>min{ <br>
+          (f)<span class="var-defined">fh1k</span>*<span class="var-defined">t1</span>*<span class="var-defined">d</span>=<input type="text" name="varOtro23" value="">N;<br>
+          (g)<span class="var-defined">fh1k</span>*<span class="var-defined">t1</span>*<span class="var-defined">d</span>*[sqrt(2+(4*<span class="var-defined">MyRk</span>/<span class="var-defined">fh1k</span>*<span class="var-defined">d</span>*<span class="var-defined">t1</span><sup>2</sup>))-1]+(<input type="text" name="varOtro24" value="">/4)=<input type="text" name="varOtro25" value="">N;<br>
+          (h)2.3*sqrt(<span class="var-defined">MyRk</span>*<span class="var-defined">fh1k</span>*<span class="var-defined">d</span>) + (<input type="text" name="varOtro26" value="">/4) = <input type="text" name="varOtro27" value="">N;<br>
+        }
+        =<input type="text" name="varFvRkI" value="">N
+      <%}else {%>
+        \( min
+        \begin{cases}
+          (f) <%= params.varfh1k %>*<%= params.vart1 %>*<%= params.vard %>=<%= params.varOtro23 %>N\\
+          (g) <%= params.varfh1k %>*<%= params.vart1 %>*<%= params.vard %>* [\sqrt{2+\frac{4*<%= params.varMyRk %>}{<%= params.varfh1k %>*<%= params.vard %>*<%= params.vart1 %>^{2}}}-1] + \frac{<%= params.varOtro24 %>}{4} = <%= params.varOtro25 %>N\\
+          (h) 2.3*\sqrt{<%= params.varMyRk %>*<%= params.varfh1k %>*<%= params.vard %>} + \frac{<%= params.varOtro26 %>}{4}=<%= params.varOtro27 %>N
+        \end{cases}
+        = <%= params.varFvRkI %>N
+        \)
+
+      <%}%>
+      <span class="formula-number">
+        (8.11)
+      </span>
+    </p>
+
+    <p>Capacidad de carga total característica de una clavija en el corte:</p>
+
+    <p class="">
+      <% if (!print) {%>
+        \(
+          F_{v, Rk} = 2*F_{v, Rk, I} =
+        \)
+         2*<span class="var-defined">FvRkI</span> = <input type="text" name="varFvRk" value="">N
+      <%}else {%>
+        \(
+          F_{v, Rk} = 2*F_{v, Rk, I} = 2*<%= params.varFvRkI %>= <%= params.varFvRk %>N
+        \)
+      <%}%>
+    </p>
+
+
+    <% include ../page-side %>
+    <% include ../page-footer %>
+  </div>
+  <div id="page5" class="page">
+    <% include ../page-header %>
+
+    <p>Número efectivo de clavija por fila</p>
+    <p class="">
+      \(
+        n_{ef} =
+      \)
+      <% if (!print) {%>
+        <br>min{ <br>
+          n=<span class="var-defined">n</span>;<br>
+          \(n^{0.9}*\sqrt[4]{\frac{a_1}{13*d}}=\)<span class="var-defined">n</span><sup>0.9</sup>*sqrt((<span class="var-defined">a1</span>/13*<span class="var-defined">d</span>))=<input type="text" name="varOtro28" value="">;<br>
+        }
+        =<input type="text" name="varnef" value="">
+      <%}else {%>
+        \( min
+        \begin{cases}
+          n=<%= params.varn %>\\
+          n^{0.9}*\sqrt[4]{\frac{a_1}{13*d}}=<%= params.varn %>^{0.9}*\sqrt[4]{\frac{<%= params.vara1 %>}{13*<%= params.vard %>}}=<%= params.varOtro28 %>
+        \end{cases}
+        = <%= params.varnef %>
+        \)
+
+      <%}%>
+      <span class="formula-number">
+        (8.34)
+      </span>
+    </p>
+
+    <p>Capacidad de carga característica de la conexión:</p>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          F_{v, Rk, gea} = n_{ef}*m*F_{v, Rk}*10^{-3} =
+        \)
+        <span class="var-defined">nef</span>*<span class="var-defined">m</span>*<span class="var-defined">FvRk</span>*10<sup>-3</sup>=<input type="text" name="varFvRkgea" value="">kN
+      <%}else {%>
+        \(
+          F_{v, Rk, gea} = n_{ef}*m*F{v, Rk}*10^{-3} = <%= params.varnef %>*<%= params.varm %>*<%= params.varFvRk %>*10^{-3}=<%= params.varFvRkgea %>kN
+        \)
+      <%}%>
+    </p>
+
+    <p>Capacidad de carga nominal:</p>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          F_{v, Rd} = k_{mod}*\frac{F_{v, Rk, gea}}{\gamma_M} =
+        \)
+        <span class="var-defined">Kmod</span>*(<span class="var-defined">FvRkgea</span>/<input type="text" name="varOtro29" value="">)=<input type="text" name="varFvRdrepetida" value="">kN
+      <%}else {%>
+        \(
+          F_{v, Rd} = k_{mod}*\frac{F_{v, Rk, gea}}{\gamma_M} = <%= params.varKmod %>*\frac{<%= params.varFvRkgea %>}{<%= params.varOtro29 %>} = <%= params.varFvRdrepetida %>kN
+        \)
+      <%}%>
+    </p>
+
+    <p class="border center wide">
+      Comprobación de resistencia de la madera
+      <% if (!print) {%>
+        \(
+          \frac{F_{t,d}}{F_{v, Rd}} =
+        \)
+         (<span class="var-defined">Ft,d</span>/<span class="var-defined">FvRd</span>)=<input type="text" name="res5" value="">
+      <%}else {%>
+        \(
+          \frac{F_{t,d}}{F_{v, Rd}} = \frac{<%= params.varFtD %>}{<%= params.varFvRdrepetida %>} = <%= params.res5 %>
+        \)
+      <%}%>
+    </p>
+
+    <h2>Comprobación de fallo en bloque:</h2>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          l_{v, 1} = a_{3, t}-\frac{d}{2} =
+        \)
+         <span class="var-defined">a3t</span>-(<span class="var-defined">d</span>/2)=<input type="text" name="varlv1" value="">mm
+      <%}else {%>
+        \(
+          l_{v, 1} =  a_{3, t}-\frac{d}{2} = <%= params.vara3t %>-\frac{<%= params.vard %>}{2} =<%= params.varlv1 %>mm
+        \)
+      <%}%>
+    </p>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          l_{v, 2} = a_{1}-d =
+        \)
+         <span class="var-defined">a1</span>-<span class="var-defined">d</span>=<input type="text" name="varlv2" value="">mm
+      <%}else {%>
+        \(
+          l_{v, 2} = a_{1}-d = <%= params.vara1 %>-<%= params.vard %>=<%= params.varlv2 %>mm
+        \)
+      <%}%>
+    </p>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          l_{t, 1} = a_{2}-d =
+        \)
+         <span class="var-defined">a2</span>-<span class="var-defined">d</span>=<input type="text" name="varlt1" value="">mm
+      <%}else {%>
+        \(
+          l_{t, 1} = a_{2}-d = <%= params.vara2 %>-<%= params.vard %>=<%= params.varlt1 %>mm
+        \)
+      <%}%>
+    </p>
+    <br>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          L_{net, v} = 2*l_{v, 1} + 2*(n-1)*l_{v, 2} =
+        \)
+         2*<span class="var-defined">lv1</span>+2*(<span class="var-defined">n</span>-1)*<span class="var-defined">lv2</span>=<input type="text" name="varLnetv" value="">mm
+      <%}else {%>
+        \(
+          L_{net, v} = 2*l_{v, 1} + 2*(n-1)*l_{v, 2} = 2*<%= params.varlv1 %>+2*(<%= params.varn %>-1)*<%= params.varlv2 %>=<%= params.varLnetv %>mm
+        \)
+      <%}%>
+      <span class="formula-number">
+        (A.4)
+      </span>
+    </p>
+    <p class="">
+      <% if (!print) {%>
+        \(
+          L_{net, t} = (m-1)*l_{t, 1} =
+        \)
+         (<span class="var-defined">m</span>-1)*<span class="var-defined">lt1</span>=<input type="text" name="varLnett" value="">mm
+      <%}else {%>
+        \(
+          L_{net, t} = (m-1)*l_{t, 1} = (<%= params.varm %>-1)*<%= params.varlt1 %>=<%= params.varLnett %>mm
+        \)
+      <%}%>
+      <span class="formula-number">
+        (A.5)
+      </span>
+    </p>
+    <br>
+    <p class="">Holgura del corte \(t_{s, L}\):
+      <% if (!print) {%>
+         <span class="var-defined">tsL</span>mm
+      <%}else {%>
+        <%= params.vartsL %>mm
+      <%}%>
+      Consideración del ancho de la ranura en el adorno de madera
+    </p>
+    <p class=""> Tipología \(s\):
+      <% if (!print) {%>
+         <input type="text" name="vars" value="">
+      <%}else {%>
+        <%= params.vars %>
+      <%}%>
+    </p>
+    <p class="">
+      \(
+        A_{net, t} = L_{net, t}*(t_1-t_{s, L})=
+       \)
+      <% if (!print) {%>
+         <span class="var-defined">Lnett</span>*(<span class="var-defined">t1</span>-<span class="var-defined">tsL</span>) =<input type="text" name="varAnett" value="">mm<sup>2</sup>
+      <%}else {%>
+        <%= params.varLnett %>*(<%= params.vart1 %>-<%= params.vartsL %>)=<%= params.varAnett %>mm^2
+      <%}%>
+    </p>
+
+    <p class="">
+      \(
+        t_{ef} =
+        \begin{cases}
+          (e)(h)2*\sqrt{\frac{M_{y, Rk}}{f_{h, k}*d}}\\
+          (d)(g)t_1*[\sqrt{2+\frac{4*M_{y, Rk}}{f_{h, k}*d*t_{1}^{2}}}-1]
+        \end{cases}
+      \)
+      <% if (!print) {%>
+        <br> = min{ <br>
+          (e)(h) 2*sqrt((<span class="var-defined">MyRk</span>/(<span class="var-defined">fh0k</span>*<span class="var-defined">d</span>)))=<input type="text" name="varOtro1" value="">mm;<br>
+          (d)(g) <span class="var-defined">t1</span>*[sqrt(2+(4*<span class="var-defined">MyRk</span>/(<span class="var-defined">fh0k</span>*<span class="var-defined">d</span>*<span class="var-defined">t1</span><sup>2</sup>)))-1]=<input type="text" name="varOtro2" value="">mm;<br>
+        } = <input type="text" name="vartef" value="">mm
+      <%}else {%>
+        \( min
+        \begin{cases}
+          (e)(h) 2*\sqrt{\frac{<%= params.varMyRk %>}{<%= params.varfh0k %>*<%= params.vard %>}}=<%= params.varOtro1 %>mm\\
+          (d)(g) <%= params.vart1 %>*[\sqrt{2+\frac{4*<%= params.varMyRk %>}{<%= params.varfh0k %>*<%= params.vard %>*<%= params.vart1 %>^{2}}}-1]=<%= params.varOtro2 %>mm
+        \end{cases}
+        =<% params.vartef %>mm
+        \)
+
+      <%}%>
+      <span class="formula-number">
+        (DIN EN 1995-1-1/A2:2014-07, GI. A.7)
+      </span>
+    </p>
+
+    <p>Plano de corte I y II:</p>
+    <p class="">
+      \( A_{net, v, I} \) =
+      <% if (!print) {%>
+        <br>min{ <br>
+          (f) \(L_{net, v}*(t_1-t_{s, L})\) = <span class="var-defined">Lnetv</span>*(<span class="var-defined">t1</span>-<span class="var-defined">tsL</span>)=<input type="text" name="varOtro3" value="">mm<sup>2</sup>;<br>
+          (g) \(\frac{L_{net, v}}{2}*(L_{net, t}+2*t_{ef})\) = (<span class="var-defined">Lnetv</span>/2)*(<span class="var-defined">Lnett</span>+2*<span class="var-defined">tef</span>)=<input type="text" name="varOtro4" value="">mm<sup>2</sup>;<br>
+          (h) \(\frac{L_{net, v}}{2}*(L_{net, t}+2*t_{ef})\) = (<span class="var-defined">Lnetv</span>/2)*(<span class="var-defined">Lnett</span>+2*<span class="var-defined">tef</span>)=<input type="text" name="varOtro5" value="">mm<sup>2</sup>;<br>
+        }
+        = <input type="text" name="varAnetvI" value="">mm<sup>2</sup>
+      <%}else {%>
+        \(min
+        \begin{cases}
+        (f) L_{net, v}*(t_1-t_{s, L}) = <%= params.varLnetv %>*(<%= params.vart1 %>-<%= params.vartsL %>) = <%= params.varOtro3 %>mm^2\\
+        (g) \frac{L_{net, v}}{2}*(L_{net, t}+2*t_{ef}) = \frac{<%= params.varLnetv %>}{2}*(<%= params.varLnett %>+2*<%= params.vartef %>) = <%= params.varOtro4 %>mm^2\\
+        (h) \frac{L_{net, v}}{2}*(L_{net, t}+2*t_{ef}) = \frac{<%= params.varLnetv %>}{2}*(<%= params.varLnett %>+2*<%= params.vartef %>) = <%= params.varOtro5 %>mm^2\\
+        \end{cases}
+        = <%= params.varAnetvI %>mm^2
+        \)
+
+      <%}%>
+      <span class="formula-number">
+        (A.3)
+      </span>
+    </p>
+
+    <% include ../page-side %>
+    <% include ../page-footer %>
+  </div>
+
+
+  <div id="page6" class="page">
+    <% include ../page-header %>
+
+    <p>Capacidad de carga característica debido al cortante de bloque por superficie de corte:</p>
+    <p class="">
+      \( F_{bs, Rk, I} \) =
+      <% if (!print) {%>
+        <br>max{ <br>
+          \(1.50*A_{net, t}*f_{t, 0, k}*10^{-3}\) = 1.50*<span class="var-defined">Anett</span>*<input type="text" name="varOtro6" value="">*10<sup>-3</sup>=<input type="text" name="varOtro7" value="">kN;<br>
+          \(0.70*A_{net, v}*f_{v, k}*10^{-3}\) = 0.70*<span class="var-defined">Anetv</span>*<input type="text" name="varOtro8" value="">*10<sup>-3</sup>=<input type="text" name="varOtro9" value="">kN;<br>
+        } = <input type="text" name="varFbsRkI" value="">kN
+      <%}else {%>
+        \(max
+        \begin{cases}
+          1.50*A_{net, t}*f_{t, 0, k}*10^{-3}= 1.50*<%= params.varAnett %>*<%= params.varOtro6 %>*10^{-3} = <%= params.varOtro7 %>kN\\
+          0.70*A_{net, v}*f_{v, k}*10^{-3} = 0.70*<%= params.varAnetvI %>*<%= params.varOtro8 %>*10^{-3} = <%= params.varOtro9 %>kN
+        \end{cases}
+        = <% params.varFbsRkI %>
+        \)
+
+      <%}%>
+      <span class="formula-number">
+        (A.1)
+      </span>
+    </p>
+
+    <p>Capacidad de carga nominal:</p>
+    <p class="">
+      \( F_{bs, Rd}  = k_{mod}*\frac{F_{bs, Rk}}{1.30} = \)
+      <% if (!print) {%>
+        <span class="var-defined">Kmod</span>*(<span class="var-defined">FbsRk</span>/1.30)=<input type="text" name="varFbsRd" value="">kN
+      <%}else {%>
+        \(
+          <%= params.varKmod %>*\frac{<%= params.varFbsRkI %>}{1.30} = <%= params.varFbsRd %>kN
+        \)
+
+      <%}%>
+    </p>
+    <p class="border center wide">
+      Comprobación cortante en la madera:
+      <% if (!print) {%>
+        \(
+          \frac{F_{t,d}}{F_{bs, Rd}} =
+        \)
+         (<span class="var-defined">Ft,d</span>/<span class="var-defined">FbsRd</span>)=<input type="text" name="res6" value="">
+      <%}else {%>
+        \(
+          \frac{F_{t,d}}{F_{bs, Rd}} = \frac{<%= params.varFtD %>}{<%= params.varFbsRd %>} = <%= params.res6 %>
+        \)
+      <%}%>
+    </p>
+
+    <h2>Recopilación de los resultados</h2>
+    <p>
+      Capacidad de carga lateral de madera:
+      <% if (!print) {%>
+        \(
+          \frac{\sigma_{t, 0, d}}{k_{t, c}*k_{h}*f_{t, 0, d}} =
+        \)
+        (<span class="var-defined">sigma70d</span>/(<input type="text" name="varOtro10" value="">*<span class="var-defined">kh</span>*<span class="var-defined">ft0d</span>)) = <span class="var-defined">Resultado 1</span>
+      <%}else {%>
+        \(
+          \frac{\sigma_{t, 0, d}}{k_{t, c}*k_{h}f_{t, 0, d}} = \frac{<%= params.varsigmat0d %>}{<%= params.varOtro10 %>*<%= params.varkh %>*<%= params.varft0d %>} = <%= params.res1 %>
+        \)
+      <%}%>
+    </p>
+    <p>
+      Capacidad de carga de chapa de acero:
+      <% if (!print) {%>
+        \(
+          \frac{F_{t, d}}{N_{R, d}} =
+        \)
+        <span class="var-defined">Ft,d</span>/<input type="text" name="varOtro11" value=""> = <span class="var-defined">Resultado 2</span>
+      <%}else {%>
+        \(
+          \frac{F_{t, d}}{N_{R, d}} = \frac{<%= params.varFtD %>}{<%= params.varOtro11 %>} = <%= params.res2 %>
+        \)
+      <%}%>
+    </p>
+
+    <p>
+      Comprobación de los medios de conexión en la chapa:
+      <% if (!print) {%>
+        \(
+          \frac{F_{v, Ed}}{F_{Rd}} =
+        \)
+        <span class="var-defined">FvEd</span>/<span class="var-defined">FRd</span> = <span class="var-defined">Resultado 3</span>
+      <%}else {%>
+        \(
+          \frac{F_{v, Ed}}{F_{Rd}} = \frac{<%= params.varFvEd %>}{<%= params.varFRd %>} = <%= params.res3 %>
+        \)
+      <%}%>
+    </p>
+
+    <p>
+      Fallo de bloque en la chapa:
+      <% if (!print) {%>
+        \(
+          \frac{F_{t,d}}{n_{s}+V_{eff, 1, Rd}} =
+        \)
+         (<span class="var-defined">Ft,d</span>/(<span class="var-defined">ns</span>+<span class="var-defined">Veff1Rd</span>))=<span class="var-defined">Resultado 4</span>
+      <%}else {%>
+        \(
+          \frac{F_{t,d}}{n_{s}+V_{eff, 1, Rd}} = \frac{<%= params.varFtD %>}{<%= params.varns %>+<%= params.varVeff1Rd %>} = <%= params.res4 %>
+        \)
+      <%}%>
+    </p>
+    <p>
+      Comprobación de los medios de conexión en madera:
+      <% if (!print) {%>
+        \(
+          \frac{F_{t,d}}{F_{v, Rd}} =
+        \)
+         (<span class="var-defined">Ft,d</span>/<span class="var-defined">FvRd</span>)=<span class="var-defined">Resultado 5</span>
+      <%}else {%>
+        \(
+          \frac{F_{t,d}}{F_{v, Rd}} = \frac{<%= params.varFtD %>}{<%= params.varFvRdrepetida %>} = <%= params.res5 %>
+        \)
+      <%}%>
+    </p>
+    <p>
+      Comprobación cortante en la madera:
+      <% if (!print) {%>
+        \(
+          \frac{F_{t,d}}{F_{bs, Rd}} =
+        \)
+         (<span class="var-defined">Ft,d</span>/<input type="text" name="varOtro12" value="">)=<span class="var-defined">Resultado 6</span>
+      <%}else {%>
+        \(
+          \frac{F_{t,d}}{F_{bs, Rd}} = \frac{<%= params.varFtD %>}{<%= params.varOtro12 %>} = <%= params.res6 %>
+        \)
+      <%}%>
+    </p>
+
+    <p class="border center wide">
+      <strong>Comprobación</strong>
+      <% if (!print) {%>
+        <input type="text" name="resFinal" value="">
+      <%}else {%>
+        <%= params.resFinal %>
+      <%}%>
+      <strong>Comprobaciones sí cumple</strong>
+    </p>
+
+    <h2>Normas utilizadas</h2>
+    <p>UNE EN 338:2016-07 Madera estructural. Clases resistentes</p>
+    <p>UNE EN 1993-1-1:2010-12 Eurocódigo 3: Proyecto de estructuras de acero. Parte 1-1 Eurocódigo 3.</p>
+    <p>DIN EN 1993-1-8:2010-12 Eurocódigo 3: Proyecto de estructuras de acero. Parte 1-8</p>
+    <p>DIN EN 1995-1-1:2010-12 Eurocodigo 5: Proyecto de estructuras de madera. 1-1</p>
+    <p>DIN EN 1995-1-1/A2:2014-07 Änderung A2 zu EC5</p>
+    <p>DIN EN 1995-1-1/NA:2013-08 Nationaler Anhang (EC5)</p>
+
+    <% include ../page-side %>
+    <% include ../page-footer %>
+  </div>
+<% if (!print){%>
+  <% include ../modal-print %>
+  </form>
+<% } %>
+</body>

@@ -4,7 +4,8 @@ body {
   font-family: 'PT Sans', 'Playfair Display', serif;
   font-size: 4mm; }
   body .page {
-    margin: 10px auto;
+    position: relative;
+    margin: 1cm auto;
     box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
     position: relative;
     width: 21cm;
@@ -21,7 +22,7 @@ body {
       display: inline-block;
       float: left; }
     body .page .figure img {
-      max-height: 8cm; }
+      max-height: 13cm; }
     body .page h1 {
       font-size: 6mm; }
     body .page h2 {
@@ -30,7 +31,29 @@ body {
       list-style-type: none; }
     body .page input[type=text] {
       border: none;
-      border-bottom: 1px solid black; }
+      border: 1px solid blue;
+      border-radius: 3px;
+      width: 15mm; }
+    body .page .var-defined {
+      color: green; }
+    body .page sup input[type=text] {
+      width: 8mm; }
+    body .page p {
+      position: relative; }
+      body .page p .formula-number {
+        position: absolute;
+        right: -2cm;
+        font-weight: bold; }
+    body .page p.center {
+      margin: 2cm auto;
+      max-width: 15cm;
+      text-align: center; }
+    body .page p.border {
+      border: 1px solid black;
+      padding: 5mm; }
+    body .page p.wide {
+      max-width: none;
+      width: 100%; }
 
 .header {
   display: flex;
@@ -51,7 +74,14 @@ body {
   width: 21cm;
   display: flex;
   align-items: center;
-  overflow: hidden; }
+  overflow: hidden;
+  display: flex; }
+  .footer .footer-pagination {
+    flex: 1 0 auto; }
+    .footer .footer-pagination .page-number {
+      font-weight: bold; }
+    .footer .footer-pagination .page-total {
+      font-weight: bold; }
 
 @media print {
   body .page {
@@ -62,12 +92,13 @@ body {
   background-color: white;
   position: fixed;
   box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.3);
-  top: -10cm;
-  left: 50%;
-  transform: translateX(-50%); }
+  right: 1cm;
+  top: 1cm;
+  text-align: left;
+  font-size: 1.3em; }
   .modal.print {
     padding: 10px 20px;
-    border-radius: 3em;
+    border-radius: 1em;
     transition: top 0.3s ease-in-out, opacity 0.5s ease-in-out;
     opacity: 0; }
     .modal.print.visible {
@@ -91,7 +122,7 @@ body {
     padding-right: 20;
     min-height: 300px;
     max-height: 80vh;
-    width: 20vw;
+    max-width: 50vw;
     border-radius: 0.8em; }
     .container .lista-reportes h2 {
       text-align: center; }
@@ -113,3 +144,13 @@ body {
         .container .lista-reportes ul li .actions a {
           color: black;
           margin: 0 10px; }
+
+.side {
+  position: absolute;
+  left: 0;
+  top: 70%;
+  height: 22.5mm;
+  transform: rotate(-90deg);
+  transform-origin: left top 0;
+  display: flex;
+  align-items: center; }
